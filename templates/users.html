@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}會員清單 - 會員系統{% endblock %}
+
+{% block content %}
+<article>
+    <header>
+        <h2>會員清單</h2>
+    </header>
+
+    <div class="overflow-auto">
+        <table>
+            <thead>
+                <tr>
+                    <th>帳號</th>
+                    <th>Email</th>
+                    <th>電話</th>
+                    <th>出生日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phone | mask_phone }}</td>
+                    <td>{{ user.birthdate | format_tw_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        <a href="{{ url_for('index') }}" role="button" class="secondary">返回首頁</a>
+    </p>
+</article>
+{% endblock %}
