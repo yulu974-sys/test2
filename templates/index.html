@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}首頁 - 會員系統{% endblock %}
+
+{% block content %}
+<article>
+    <header>
+        <h1>簡易會員系統</h1>
+    </header>
+    <p>歡迎使用本系統，你可以在這裡完成會員註冊、登入與瀏覽會員資料。</p>
+    <p>本系統使用 JSON 檔案儲存會員資訊，模擬無狀態的 Web 請求流程。</p>
+
+    <p>
+        <a href="{{ url_for('login_route') }}" role="button">前往登入</a>
+        <a href="{{ url_for('register_route') }}" role="button" class="secondary">前往註冊</a>
+    </p>
+</article>
+{% endblock %}
