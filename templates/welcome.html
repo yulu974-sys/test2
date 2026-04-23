@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}歡迎 - 會員系統{% endblock %}
+
+{% block content %}
+<article>
+    <header>
+        <h2>歡迎，{{ user.username }}！</h2>
+    </header>
+
+    <p><strong>帳號：</strong>{{ user.username }}</p>
+    <p><strong>Email：</strong>{{ user.email }}</p>
+    <p><strong>電話：</strong>{{ user.phone | mask_phone }}</p>
+    <p><strong>出生日期：</strong>{{ user.birthdate | format_tw_date }}</p>
+
+    <p>
+        <a href="{{ url_for('users_list_route') }}" role="button">查看會員清單</a>
+        <a href="{{ url_for('index') }}" role="button" class="secondary">返回首頁</a>
+    </p>
+</article>
+{% endblock %}
