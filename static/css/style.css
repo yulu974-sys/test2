@@ -1,0 +1,13 @@
+main.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+article {
+    margin-top: 1.5rem;
+}
+
+table td,
+table th {
+    white-space: nowrap;
+}
